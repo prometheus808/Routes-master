@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    a(href='/') Home
+    p
+    a(href='/books') Books
+    h1= title
+    p Welcome to #{title}
+    ul
+        each user in users
+            li #{user.FirstName} #{user.LastName}
+              if (user.Phone.length > 0)
+                p(style="margin-left:5px")=user.Phone
+              else
+                p sorry you can not call Mr. #{user.LastName}
+

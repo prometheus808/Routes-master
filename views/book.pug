@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    a(href='/') Home
+    p
+    a(href='/books') Books
+    p
+    a(href='/users/list') Users
+    p Title: #{title}
+    p Author: #{author}
+    p Pages: #{pages}
+    p Votes: #{votes}
+    p Theme: #{theme}
+    ol
+      each review in reviews
+        li= review
+    a(href='/books/delete/' + ISBN) Delete Me!
+    br
+    a(href='/books/edit/' + ISBN) Edit Me!

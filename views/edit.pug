@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    a(href='/') Home
+    p
+    a(href='/books/') Books
+    p
+    a(href='/users/list') Users
+    p Title: #{title}
+
+    form(action="/books/save")
+      p ISBN: #{ISBN}
+        input(type="hidden" name="ISBN" value=ISBN)
+      p Book Title:
+        input(type="text" name="title" value=title)
+      p Author:
+        input(type="text" name="author" value=author)
+      p Pages:
+        input(type="text" name="pages" value=pages)
+      p Theme:
+        input(type="text" name="theme" value=theme)
+      p Votes:
+        input(type="text" name="votes" value=votes)
+      input(type="submit" value="Submit")
+

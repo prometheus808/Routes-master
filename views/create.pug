@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    a(href='/') Home
+    p
+    a(href='/books/') Books
+    p
+    a(href='/users/list') Users
+    form(action="/books/create")
+        p ISBN:
+            input(type="text" name="ISBN"   value=ISBN)
+            p= ISBNerror
+        p Book Title:
+            input(type="text" name="title"  value=title)
+            p= TitleError
+        p Author:
+            input(type="text" name="author" value=author)
+            p= AuthorError
+        p Pages:
+            input(type="text" name="pages"  value=pages)
+        p Theme:
+            input(type="text" name="theme"  value=theme)
+        p Votes:
+            input(type="text" name="votes"  value=votes)
+        input(type="submit" value="Submit")

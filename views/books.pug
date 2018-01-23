@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    a(href='/') Home
+    p
+    a(href='/users/list') Users
+    br
+    a(href='/books/new') New Book
+
+    h1= title
+    - var bestBook = "Dude Who stole my var?"
+    - var vote = 0
+    table
+        thead
+          tr
+            th ISBN
+            th Title
+            th Author
+            th Votes
+        tbody
+          each book in library
+            -
+                if (book.votes > vote)
+                {
+                    bestBook = book.title
+                    vote = book.votes
+                }
+            tr
+              td
+                a(href='/books/' + book.ISBN) #{book.ISBN}
+              td= book.title
+              td= book.author
+              td= book.votes
+
+    h3 And the best book is #{bestBook}
